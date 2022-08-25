@@ -1,0 +1,17 @@
+services:
+  - type: web
+    env: static
+    name: render-header-test
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    branch: main
+    headers:
+      - path: /*
+        name: X-Foo
+        value: header-foo-1
+      - path: /header-test*
+        name: X-Foo
+        value: header-foo-2
+      - path: /*
+        name: X-Bar
+        value: header-bar
